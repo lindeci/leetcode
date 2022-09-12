@@ -104,3 +104,5 @@ int splitArray(vector<int> &nums, int m)
 ——访问根结点的操作发生在遍历其左右子树之中（间）。  
 ③ LRN：后序遍历(Postorder Traversal)  
 ——访问根结点的操作发生在遍历其左右子树之后。
+
+$$\left( \sum{k=1}^n a_k b_k \right)^2 \leq \left( \sum{k=1}^n ak^2 \right) \left( \sum{k=1}^n b_k^2 \right)$$
