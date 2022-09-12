@@ -41,11 +41,9 @@ bool check(vector<int>& nums, int mid, int m) {
 ## 动态规划
 - dp[i][j] 表示将数组的前 i 个数分割为 j 段所能得到的最大连续子数组和的最小值  
 - preSum(i,j) 表示数组中下标落在区间 [i,j] 内的数的和。  
-- sum(i) 标签数组中前i个数的和
+- sum(i) 标签数组中前i个数的和  
 
-$$
-\begin{align} 
-
+$$\begin{align} 
 &
 dp[i][j]  =
 \min_{k=j-1}^{i-1}
@@ -53,11 +51,10 @@ dp[i][j]  =
 max(dp[k+1][j−1],preSum(0,k)) 
 \right\rbrace  
 \hspace{100cm}\\
-
 & preSum(i,j)=sum[j]-sum[i-1] \\
-
 \end{align}
-$$
+$$  
+
 <strong>把动记忆动态规划看为二维数组dp[i][j]：</strong>
 | 0,0 | 0,1 | 0,2 | ……| 0,j-1 | 0,j|
 | ------ | ------ | ------ | ------ | ------ | ------ |
