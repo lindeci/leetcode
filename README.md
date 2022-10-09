@@ -2,6 +2,7 @@
 - [顺序拆分数组贪心算法](#顺序拆分数组贪心算法)
 - [动态规划](#动态规划)
 - [二叉树遍历](#二叉树遍历)
+- [数学图形相关](#数学图形相关)
 ## 二分查找算法模板
 ```c++
 int left = 0;
@@ -93,11 +94,50 @@ int splitArray(vector<int> &nums, int m)
 }
 ```
 ## 二叉树遍历
-遍历命名  
+<strong>遍历命名</strong>  
 根据访问结点操作发生位置命名：  
 ① NLR：前序遍历(Preorder Traversal 亦称（先序遍历））  
 ——访问根结点的操作发生在遍历其左右子树之前。  
 ② LNR：中序遍历(Inorder Traversal)  
 ——访问根结点的操作发生在遍历其左右子树之中（间）。  
 ③ LRN：后序遍历(Postorder Traversal)  
-——访问根结点的操作发生在遍历其左右子树之后。
+——访问根结点的操作发生在遍历其左右子树之后。  
+<strong>代码：</strong>
+```c++
+typedef struct TreeNode {
+    int data;
+    struct TreeNode *left;
+    struct TreeNode *right;
+    struct TreeNode *parent;
+} TreeNode;
+//前序遍历:
+void pre_order(TreeNode *Node) {
+    if(Node != NULL) {
+        printf("%d ", Node->data);
+        middle_order(Node->left);
+        middle_order(Node->right);
+    }
+}
+//中序遍历: 
+void middle_order(TreeNode *Node) {
+    if(Node != NULL) {
+        middle_order(Node->left);
+        printf("%d ", Node->data);
+        middle_order(Node->right);
+    }
+}
+//后序遍历:
+void post_order(TreeNode *Node) {
+    if(Node != NULL) {
+        middle_order(Node->left);
+        middle_order(Node->right);
+        printf("%d ", Node->data);
+    }
+}
+```
+## 数学图形相关
+1. 两条边垂直： 向量内积=0   
+$$
+x_1*x_2+y_1*y_2=0
+$$
+
